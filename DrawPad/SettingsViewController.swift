@@ -74,7 +74,9 @@ class SettingsViewController: UIViewController {
     UIGraphicsBeginImageContext(imageViewBrush.frame.size)
     var context = UIGraphicsGetCurrentContext()
    
-    CGContextSetLineCap(context, kCGLineCapRound)
+    //CGContextSetLineCap(context, kCGLineCapRound)
+    //CGContextSetLineCap(context, kCGLineCapRound)
+    
     CGContextSetLineWidth(context, brush)
    
     CGContextSetRGBStrokeColor(context, red, green, blue, 1.0)
@@ -87,7 +89,8 @@ class SettingsViewController: UIViewController {
     UIGraphicsBeginImageContext(imageViewBrush.frame.size)
     context = UIGraphicsGetCurrentContext()
    
-    CGContextSetLineCap(context, kCGLineCapRound)
+    //CGContextSetLineCap(context, kCGLineCapRound!)
+    
     CGContextSetLineWidth(context, 20)
     CGContextMoveToPoint(context, 45.0, 45.0)
     CGContextAddLineToPoint(context, 45.0, 45.0)

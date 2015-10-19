@@ -108,22 +108,37 @@ class RecognizerViewController: UIViewController {
     
     
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    /*override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         rawPoints = []
         let touch = touches.first as? UITouch
         let location = touch!.locationInView(view)
         rawPoints.append(Int(location.x))
         rawPoints.append(Int(location.y))
+    }*/
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+            rawPoints = []
+            //let touch = touches.first as? UITouch
+            let touchesSet=touches as NSSet
+            let touch=touchesSet.anyObject() as? UITouch
+            let location = touch!.locationInView(view)
+            rawPoints.append(Int(location.x))
+            rawPoints.append(Int(location.y))
+        
+        super.touchesBegan(touches, withEvent:event)
     }
     
     
     
     
+  
     
-    
-    
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first as? UITouch
+    //override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        //let touch = touches.first as? UITouch
+        let touchesSet=touches as NSSet
+        let touch=touchesSet.anyObject() as? UITouch
         let location = touch!.locationInView(view)
         rawPoints.append(Int(location.x))
         rawPoints.append(Int(location.y))
@@ -131,13 +146,13 @@ class RecognizerViewController: UIViewController {
         self.renderView.pointsToDraw = rawPoints
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         
         var path:Path = Path()
         path.addPointFromRaw(rawPoints)
         
-        var gesture:PathModel? = self.recognizer!.recognizePath(path)
+        let gesture:PathModel? = self.recognizer!.recognizePath(path)
         
         if gesture != nil {
             letter.text = gesture!.datas as? String

@@ -4,7 +4,7 @@
 //
 //  Created by Jean-Pierre Distler on 13.11.14.
 //  Copyright (c) 2014 Ray Wenderlich. All rights reserved.
-//
+//actual
 
 import UIKit
 
@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tempImageView: UIImageView!
    
     
-    var lastPoint = CGPoint.zeroPoint
+    var lastPoint = CGPoint.zero
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
@@ -78,9 +78,11 @@ class ViewController: UIViewController {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         swiped = false
-        if let touch = touches.first as? UITouch {
+        let touchesSet=touches as NSSet
+        
+        if let touch=touchesSet.anyObject() as? UITouch {
             lastPoint = touch.locationInView(self.view)
         }
     }
@@ -97,10 +99,14 @@ class ViewController: UIViewController {
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
         
         // 3
-        CGContextSetLineCap(context, kCGLineCapRound)
+        //CGContextSetLineCap(context, kCGLineCapRound);
+        //CGContextSetLineCap(context, kCGLineCapRound)
+         CGContextSetBlendMode(context, CGBlendMode.Normal)
+        
         CGContextSetLineWidth(context, brushWidth)
         CGContextSetRGBStrokeColor(context, red, green, blue, 1.0)
-        CGContextSetBlendMode(context, kCGBlendModeNormal)
+        //CGContextSetBlendMode(context, kCGBlendModeNormal)
+        CGContextSetBlendMode(context, CGBlendMode.Normal)
         
         // 4
         CGContextStrokePath(context)
@@ -112,10 +118,12 @@ class ViewController: UIViewController {
         
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)  {
         // 6
         swiped = true
-        if let touch = touches.first as? UITouch {
+        let touchesSet=touches as NSSet
+        
+        if let touch=touchesSet.anyObject() as? UITouch {
             let currentPoint = touch.locationInView(view)
             drawLineFrom(lastPoint, toPoint: currentPoint)
             
@@ -124,7 +132,7 @@ class ViewController: UIViewController {
         }
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if !swiped {
             // draw a single point
@@ -133,8 +141,9 @@ class ViewController: UIViewController {
         
         // Merge tempImageView into mainImageView
         UIGraphicsBeginImageContext(mainImageView.frame.size)
-        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
-        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
+        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.Normal, alpha: 1.0)
+        //tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
+        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.Normal, alpha: opacity)
         mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

@@ -14,6 +14,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tempImageView: UIImageView!
    
+    var nombreLetra:String?
+    
+    var mayuscula:BooleanType?
     
     var lastPoint = CGPoint.zero
     var red: CGFloat = 0.0
@@ -40,6 +43,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.mainImageView.image = UIImage(named: nombreLetra!)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,6 +56,7 @@ class ViewController: UIViewController {
     
     @IBAction func reset(sender: AnyObject) {
         mainImageView.image = nil
+        self.mainImageView.image = UIImage(named: nombreLetra!)
     }
     
     @IBAction func share(sender: AnyObject) {

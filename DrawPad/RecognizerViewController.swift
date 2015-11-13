@@ -12,7 +12,8 @@ class RecognizerViewController: UIViewController {
     
     var rawPoints:[Int] = []
     var recognizer:DBPathRecognizer?
-    
+    var mayuscula:BooleanType?
+    var letra:String?
    
     @IBOutlet weak var letter: UILabel!
     @IBOutlet weak var renderView: RenderView!
@@ -28,6 +29,8 @@ class RecognizerViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
+        self.letter.text = letra
         
         let recognizer = DBPathRecognizer(sliceCount: 8, deltaMove: 16.0)
         
@@ -76,12 +79,12 @@ class RecognizerViewController: UIViewController {
     
     
     func minLastY(cost:Int, infos:PathInfos, minValue:Double)->Int {
-        var py:Double = (Double(infos.deltaPoints.last!.y) - Double(infos.boundingBox.top)) / Double(infos.height)
+        let py:Double = (Double(infos.deltaPoints.last!.y) - Double(infos.boundingBox.top)) / Double(infos.height)
         return py < minValue ? Int.max : cost
     }
     
     func maxLastY(cost:Int, infos:PathInfos, maxValue:Double)->Int {
-        var py:Double = (Double(infos.deltaPoints.last!.y) - Double(infos.boundingBox.top)) / Double(infos.height)
+        let py:Double = (Double(infos.deltaPoints.last!.y) - Double(infos.boundingBox.top)) / Double(infos.height)
         return py > maxValue ? Int.max : cost
     }
     

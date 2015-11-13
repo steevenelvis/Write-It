@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39402A421BED282A008FB270 /* SelecNivelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39402A411BED282A008FB270 /* SelecNivelViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		39C69AF11BCC18DE006BE85A /* fondo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39C69AF01BCC18DE006BE85A /* fondo.jpg */; };
 		39C69AF31BCC1916006BE85A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C69AF21BCC1916006BE85A /* MenuViewController.swift */; };
 		39C69AF51BCC1C12006BE85A /* fondobtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C69AF41BCC1C12006BE85A /* fondobtn.png */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39402A411BED282A008FB270 /* SelecNivelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelecNivelViewController.swift; sourceTree = "<group>"; };
 		39C69AF01BCC18DE006BE85A /* fondo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondo.jpg; sourceTree = "<group>"; };
 		39C69AF21BCC1916006BE85A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		39C69AF41BCC1C12006BE85A /* fondobtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondobtn.png; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				39DD20AF1BD562E2002B3798 /* RenderView.swift */,
 				39DD20AD1BD562A8002B3798 /* DBPathRecognizer.swift */,
 				EE43D4761A14A6F200311C06 /* Main.storyboard */,
+				39402A411BED282A008FB270 /* SelecNivelViewController.swift */,
 				EE43D4791A14A6F200311C06 /* Images.xcassets */,
 				EE43D47B1A14A6F200311C06 /* LaunchScreen.xib */,
 				EE43D4701A14A6F200311C06 /* Supporting Files */,
@@ -194,6 +197,8 @@
 		EE43D4651A14A6F200311C06 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Ray Wenderlich";
 				TargetAttributes = {
@@ -260,6 +265,7 @@
 				EE43D4751A14A6F200311C06 /* ViewController.swift in Sources */,
 				EE43D4731A14A6F200311C06 /* AppDelegate.swift in Sources */,
 				78B4B8751A49DDAF002B004D /* SettingsViewController.swift in Sources */,
+				39402A421BED282A008FB270 /* SelecNivelViewController.swift in Sources */,
 				39DD20B01BD562E2002B3798 /* RenderView.swift in Sources */,
 				39C69AF31BCC1916006BE85A /* MenuViewController.swift in Sources */,
 			);

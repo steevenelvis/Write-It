@@ -612,6 +612,14 @@
                                     <action selector="reproducir:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LRq-F7-9uf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0W-Fq-IpB">
+                                <rect key="frame" x="10" y="10" width="40" height="35"/>
+                                <animations/>
+                                <state key="normal" image="sound.png"/>
+                                <connections>
+                                    <action selector="reproducir:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FMa-bK-K3J"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3g-dQ-PBX" customClass="RenderView" customModule="DrawPad" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
@@ -723,14 +731,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0W-Fq-IpB">
-                                <rect key="frame" x="10" y="10" width="40" height="35"/>
-                                <animations/>
-                                <state key="normal" image="sound.png"/>
-                                <connections>
-                                    <action selector="reproducir:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FMa-bK-K3J"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

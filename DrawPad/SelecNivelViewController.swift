@@ -73,6 +73,15 @@ class SelecNivelViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fondo.jpg")!)
         abecedario.selectedSegmentIndex = 0
         
+        let backButton = UIBarButtonItem(
+            title: "Atras",
+            style: UIBarButtonItemStyle.Bordered,
+            target: nil,
+            action: nil
+        );
+        
+        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton;
+        
     }
     
     override func didReceiveMemoryWarning() {

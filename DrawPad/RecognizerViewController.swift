@@ -70,6 +70,8 @@ class RecognizerViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.topItem!.title = "Atras"
+        
         
         self.letter.text = letra
         

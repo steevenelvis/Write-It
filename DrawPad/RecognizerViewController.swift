@@ -51,7 +51,7 @@ class RecognizerViewController: UIViewController {
     var arreglo:[[Int]] = []
     //var rawPoints:[Int] = []
     var recognizer:DBPathRecognizer?
-    var mayuscula:BooleanType?
+    var mayuscula:DarwinBoolean?
     var letra:String?
     var numTrazos:Int?
    
@@ -70,17 +70,31 @@ class RecognizerViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.topItem!.title = "Atras"
         
+        if mayuscula == false{
+            self.letra = letra?.lowercaseString
+        }
         
         self.letter.text = letra
         
         let recognizer = DBPathRecognizer(sliceCount: 8, deltaMove: 16.0)
         
+        let palabraImage = UIImageView()
+        palabraImage.image = UIImage(named: "\(letra!.lowercaseString)_i")
+        
+        palabraImage.frame.size.height = 50
+        palabraImage.frame.size.width = 200
+        palabraImage.frame.origin.y = self.view.bounds.size.height - palabraImage.frame.size.height - 5
+        palabraImage.frame.origin.x = (self.view.bounds.size.width - palabraImage.frame.size.width) / 2.0
+        
+        self.view.addSubview(palabraImage)
+        view.sendSubviewToBack(palabraImage)
+        
         let maxy3 = RecognizerViewController.customFilter(self)(.Maximum, .LastPointY, 0.3)
         let miny3 = RecognizerViewController.customFilter(self)(.Minimum, .LastPointY, 0.3)
         let maxy7 = RecognizerViewController.customFilter(self)(.Maximum, .LastPointY, 0.7)
         let miny7 = RecognizerViewController.customFilter(self)(.Minimum, .LastPointY, 0.7)
+      
         
         recognizer.addModel(PathModel(directions: [7,1,0], datas:"A"))      //Escribir los modelos predeterminados
         recognizer.addModel(PathModel(directions: [2,6,0,1,2,3,4,0,1,2,3,4], datas:"B"))
@@ -109,6 +123,37 @@ class RecognizerViewController: UIViewController {
         recognizer.addModel(PathModel(directions: [2,1,0,7,6,2,3,4,5,6,7], datas:"Y"))
         recognizer.addModel(PathModel(directions: [0,3,0], datas:"Z"))
         
+        
+        
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"a"))      //Escribir los modelos predeterminados
+        recognizer.addModel(PathModel(directions: [0,1,2,3,4,2], datas:"b"))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"b"))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0], datas:"c"))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"d", filter:miny7))
+        recognizer.addModel(PathModel(directions: [0,5,4,3,2,1,0], datas:"e"))
+        recognizer.addModel(PathModel(directions: [6,0,1,0], datas:"f"))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2,3,4], datas:"g", filter:miny3))
+        recognizer.addModel(PathModel(directions: [2,7,0,1,2], datas:"h"))
+        recognizer.addModel(PathModel(directions: [2,2], datas:"i"))
+        recognizer.addModel(PathModel(directions: [2,2,3], datas:"j"))
+        recognizer.addModel(PathModel(directions: [2,7,1], datas:"k"))
+        recognizer.addModel(PathModel(directions: [2], datas:"l"))
+        recognizer.addModel(PathModel(directions: [2,7,0,1,2,7,0,1,2], datas:"m"))
+        recognizer.addModel(PathModel(directions: [2,7,0,1,2], datas:"n"))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4], datas:"o", filter:maxy3))
+        recognizer.addModel(PathModel(directions: [1,0,7,6,5,4,3,2], datas:"p", filter:maxy7))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"q", filter: maxy3))
+        recognizer.addModel(PathModel(directions: [2,7,0], datas:"r"))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,1,2,3,4], datas:"s"))
+        recognizer.addModel(PathModel(directions: [2,0], datas:"t"))
+        recognizer.addModel(PathModel(directions: [2,4,0,7,2], datas:"u"))
+        recognizer.addModel(PathModel(directions: [1,7], datas:"v"))
+        recognizer.addModel(PathModel(directions: [1,7,1,7], datas:"w"))
+        recognizer.addModel(PathModel(directions: [1,3], datas:"x"))
+        recognizer.addModel(PathModel(directions: [1,3], datas:"y"))
+        recognizer.addModel(PathModel(directions: [0,3,0], datas:"z"))
+        
+        
         self.recognizer = recognizer
         
         if let url = NSBundle.mainBundle().URLForResource(letra!.lowercaseString, withExtension: "mp3"){
@@ -120,6 +165,15 @@ class RecognizerViewController: UIViewController {
         
         
         super.viewDidLoad()
+        
+        let backButton = UIBarButtonItem(
+            title: "Atras",
+            style: UIBarButtonItemStyle.Plain,
+            target: nil,
+            action: nil
+        );
+        
+        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton;
         
     }
     

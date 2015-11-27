@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     var mayuscula:BooleanType?
     
     var lastPoint = CGPoint.zero
-    var red: CGFloat = 0.0
+    var red: CGFloat = 255.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
     var brushWidth: CGFloat = 10.0
@@ -55,14 +55,26 @@ class ViewController: UIViewController {
             letterImage.image = UIImage(named: nombreLetra!)
         }
         else{
-            letterImage.image = UIImage(named: "retry.png")
+            letterImage.image = UIImage(named: "\(nombreLetra!.lowercaseString)-1")
         }
         
         
         letterImage.frame.size.height = 200
         letterImage.frame.size.width = 200
         letterImage.center = self.view.center
-            
+        
+        
+        let palabraImage = UIImageView()
+        palabraImage.image = UIImage(named: "\(nombreLetra!.lowercaseString)_i")
+        
+        palabraImage.frame.size.height = 50
+        palabraImage.frame.size.width = 200
+        palabraImage.frame.origin.y = self.view.bounds.size.height - palabraImage.frame.size.height - 5
+        palabraImage.frame.origin.x = (self.view.bounds.size.width - palabraImage.frame.size.width) / 2.0
+        
+        self.view.addSubview(palabraImage)
+        view.sendSubviewToBack(palabraImage)
+        
         self.view.addSubview(letterImage)
         view.sendSubviewToBack(letterImage)
         
@@ -75,6 +87,15 @@ class ViewController: UIViewController {
             }
         }
         print(self.nombreLetra!.lowercaseString)
+        
+        let backButton = UIBarButtonItem(
+            title: "Atras",
+            style: UIBarButtonItemStyle.Plain,
+            target: nil,
+            action: nil
+        );
+        
+        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton;
     
     }
     
@@ -118,6 +139,17 @@ class ViewController: UIViewController {
         
         self.view.addSubview(letterImage)
         view.sendSubviewToBack(letterImage)
+        
+        let palabraImage = UIImageView()
+        palabraImage.image = UIImage(named: "\(nombreLetra!.lowercaseString)_i")
+        
+        palabraImage.frame.size.height = 50
+        palabraImage.frame.size.width = 200
+        palabraImage.frame.origin.y = self.view.bounds.size.height - palabraImage.frame.size.height - 5
+        palabraImage.frame.origin.x = (self.view.bounds.size.width - palabraImage.frame.size.width) / 2.0
+        
+        self.view.addSubview(palabraImage)
+        view.sendSubviewToBack(palabraImage)
         
         if let url = NSBundle.mainBundle().URLForResource(nombreLetra!.lowercaseString, withExtension: "mp3"){
             if let player = try? AVAudioPlayer(contentsOfURL: url){

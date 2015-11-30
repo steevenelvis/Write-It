@@ -10,9 +10,10 @@ import UIKit
 import AVFoundation
 import MessageUI
 
-class RecognizerViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class PrincipianteViewController: UIViewController,MFMailComposeViewControllerDelegate {
     
     private var player: AVAudioPlayer = AVAudioPlayer()
+   
     var image: UIImage?
     
     @IBAction func reset(sender: AnyObject) {
@@ -56,7 +57,7 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
     var mayuscula:DarwinBoolean?
     var letra:String?
     var numTrazos:Int?
-   
+    
     @IBOutlet weak var letter: UILabel!
     @IBOutlet weak var renderView: RenderView!
     @IBOutlet weak var lblResultado: UILabel!
@@ -72,6 +73,23 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
     }
     
     override func viewDidLoad() {
+        
+        
+        let letterImage = UIImageView()
+        if self.mayuscula?.boolValue == true{
+            letterImage.image = UIImage(named: letra!)
+        }
+        else{
+            letterImage.image = UIImage(named: "\(letra!.lowercaseString)-1")
+        }
+        
+        
+        letterImage.frame.size.height = 300
+        letterImage.frame.size.width = 300
+        letterImage.center = self.view.center
+        
+        self.view.addSubview(letterImage)
+        view.sendSubviewToBack(letterImage)
         
         if mayuscula == false{
             self.letra = letra?.lowercaseString
@@ -92,11 +110,11 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
         self.view.addSubview(palabraImage)
         view.sendSubviewToBack(palabraImage)
         
-        let maxy3 = RecognizerViewController.customFilter(self)(.Maximum, .LastPointY, 0.3)
-        let miny3 = RecognizerViewController.customFilter(self)(.Minimum, .LastPointY, 0.3)
-        let maxy7 = RecognizerViewController.customFilter(self)(.Maximum, .LastPointY, 0.7)
-        let miny7 = RecognizerViewController.customFilter(self)(.Minimum, .LastPointY, 0.7)
-      
+        let maxy3 = PrincipianteViewController.customFilter(self)(.Maximum, .LastPointY, 0.3)
+        let miny3 = PrincipianteViewController.customFilter(self)(.Minimum, .LastPointY, 0.3)
+        let maxy7 = PrincipianteViewController.customFilter(self)(.Maximum, .LastPointY, 0.7)
+        let miny7 = PrincipianteViewController.customFilter(self)(.Minimum, .LastPointY, 0.7)
+        
         if self.mayuscula?.boolValue == true{
             recognizer.addModel(PathModel(directions: [7,1,0], datas:"A"))      //Escribir los modelos predeterminados
             recognizer.addModel(PathModel(directions: [6,0,1,2,3,4,0,1,2,3,4], datas:"B"))
@@ -216,22 +234,22 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         
-            var temporal:[Int] = []
-            //rawPoints = []
-            //let touch = touches.first as? UITouch
-            let touchesSet=touches as NSSet
-            let touch=touchesSet.anyObject() as? UITouch
-            let location = touch!.locationInView(view)
-            temporal.append(Int(location.x))
-            temporal.append(Int(location.y))
-            arreglo.append(temporal)
+        var temporal:[Int] = []
+        //rawPoints = []
+        //let touch = touches.first as? UITouch
+        let touchesSet=touches as NSSet
+        let touch=touchesSet.anyObject() as? UITouch
+        let location = touch!.locationInView(view)
+        temporal.append(Int(location.x))
+        temporal.append(Int(location.y))
+        arreglo.append(temporal)
         super.touchesBegan(touches, withEvent:event)
     }
     
     
     
     
-  
+    
     
     //override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -279,13 +297,14 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
         }
         //letter.text = gesture!.datas as? String
         print(gesture?.datas as? String)
-            if gesture?.datas as? String == letra {
+        if gesture?.datas as? String == letra {
             lblResultado.text = " Es correcto"
             print("correcto")
         } else {
             lblResultado.text = " Es incorrecto, prueba otra vez"
         }
     }
+    
     
     @IBAction func guardarImagen(sender: AnyObject) {
         UIGraphicsBeginImageContext(view.frame.size)
@@ -302,13 +321,12 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
         } else {
             self.showSendMailErrorAlert()
         }
-               
+        
     }
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        mailComposerVC.set
         
         let usuario = NSUserDefaults.standardUserDefaults()
         
@@ -326,9 +344,8 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
         else {
             mailComposerVC.setToRecipients([""])
         }
-
-        mailComposerVC.setMessageBody("WriteIt", isHTML: false)
         
+        mailComposerVC.setMessageBody("WriteIt", isHTML: false)
         let imageData = UIImageJPEGRepresentation(image!, 1.0)
         
         mailComposerVC.addAttachmentData(imageData!, mimeType: "image/jpeg", fileName: "image.jpg")
@@ -346,6 +363,7 @@ class RecognizerViewController: UIViewController, MFMailComposeViewControllerDel
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

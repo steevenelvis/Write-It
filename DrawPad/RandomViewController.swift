@@ -149,9 +149,9 @@ class RandomViewController: UIViewController {
         }
         
         
-        palabraImage.image = UIImage(named: "\(letra!.lowercaseString)_i")
+        palabraImage.image = UIImage(named: "\(letra!.lowercaseString)_d")
         
-        palabraImage.frame.size.height = 50
+        palabraImage.frame.size.height = 100
         palabraImage.frame.size.width = 200
         palabraImage.frame.origin.y = self.view.bounds.size.height - palabraImage.frame.size.height - 5
         palabraImage.frame.origin.x = (self.view.bounds.size.width - palabraImage.frame.size.width) / 2.0
@@ -180,30 +180,30 @@ class RandomViewController: UIViewController {
         
         
         recognizer.addModel(PathModel(directions: [7,1,0], datas:"A"))      //Escribir los modelos predeterminados
-        recognizer.addModel(PathModel(directions: [2,6,0,1,2,3,4,0,1,2,3,4], datas:"B"))
+        recognizer.addModel(PathModel(directions: [6,0,1,2,3,4,0,1,2,3,4], datas:"B"))
         recognizer.addModel(PathModel(directions: [4,3,2,1,0], datas:"C"))
-        recognizer.addModel(PathModel(directions: [2,6,7,0,1,2,3,4], datas:"D", filter:miny7))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,4,3,2,1,0], datas:"E"))
-        recognizer.addModel(PathModel(directions: [4,2], datas:"F"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,0], datas:"G", filter:miny3))
-        recognizer.addModel(PathModel(directions: [2,6,7,0,1,2], datas:"H"))
-        recognizer.addModel(PathModel(directions: [2], datas:"I"))
-        recognizer.addModel(PathModel(directions: [2,3,4], datas:"J"))
-        recognizer.addModel(PathModel(directions: [3,4,5,6,7,0,1], datas:"K"))
+        recognizer.addModel(PathModel(directions: [6,0,1,2,3,4], datas:"D", filter:miny7))
+        recognizer.addModel(PathModel(directions: [4,2,0,0], datas:"E"))
+        recognizer.addModel(PathModel(directions: [6,0,0], datas:"F"))
+        recognizer.addModel(PathModel(directions: [5,4,3,2,1,0,7,6,5,4], datas:"G", filter:miny3))
+        recognizer.addModel(PathModel(directions: [2,2,0], datas:"H"))
+        recognizer.addModel(PathModel(directions: [2,0,0], datas:"I"))
+        recognizer.addModel(PathModel(directions: [1,0,7,6,0], datas:"J"))
+        recognizer.addModel(PathModel(directions: [2,7,1], datas:"K"))
         recognizer.addModel(PathModel(directions: [2,0], datas:"L"))
-        recognizer.addModel(PathModel(directions: [6,1,7,2], datas:"M"))
+        recognizer.addModel(PathModel(directions: [2,1,7,2], datas:"M"))
         recognizer.addModel(PathModel(directions: [6,1,6], datas:"N"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4], datas:"O", filter:maxy3))
-        recognizer.addModel(PathModel(directions: [2,6,7,0,1,2,3,4], datas:"P", filter:maxy7))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4,0], datas:"Q", filter: maxy3))
-        recognizer.addModel(PathModel(directions: [2,6,7,0,1,2,3,4,1], datas:"R"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,1,2,3,4], datas:"S"))
+        recognizer.addModel(PathModel(directions: [0,1,2,3,4,5,6,7], datas:"O", filter:maxy3))
+        recognizer.addModel(PathModel(directions: [6,0,1,2,3,4], datas:"P", filter:maxy7))
+        recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4,1], datas:"Q", filter: maxy3))
+        recognizer.addModel(PathModel(directions: [6,0,1,2,3,4,1], datas:"R"))
+        recognizer.addModel(PathModel(directions: [5,4,3,2,1,0,1,2,3,4,5], datas:"S"))
         recognizer.addModel(PathModel(directions: [0,2], datas:"T"))
         recognizer.addModel(PathModel(directions: [2,1,0,7,6], datas:"U"))
-        recognizer.addModel(PathModel(directions: [1,7,0], datas:"V"))
-        recognizer.addModel(PathModel(directions: [2,7,1,6], datas:"W"))
-        recognizer.addModel(PathModel(directions: [1,0,7,6,5,4,3], datas:"X"))
-        recognizer.addModel(PathModel(directions: [2,1,0,7,6,2,3,4,5,6,7], datas:"Y"))
+        recognizer.addModel(PathModel(directions: [1,7], datas:"V"))
+        recognizer.addModel(PathModel(directions: [1,7,1,7], datas:"W"))
+        recognizer.addModel(PathModel(directions: [1,7], datas:"X"))
+        recognizer.addModel(PathModel(directions: [1,2,7], datas:"Y"))
         recognizer.addModel(PathModel(directions: [0,3,0], datas:"Z"))
         
         self.recognizer = recognizer
@@ -214,7 +214,7 @@ class RandomViewController: UIViewController {
         super.viewDidLoad()
         
         let backButton = UIBarButtonItem(
-            title: "Atras",
+            title: "Atrás",
             style: UIBarButtonItemStyle.Plain,
             target: nil,
             action: nil

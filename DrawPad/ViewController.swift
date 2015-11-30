@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         print(self.nombreLetra!.lowercaseString)
         
         let backButton = UIBarButtonItem(
-            title: "Atras",
+            title: "Atrás",
             style: UIBarButtonItemStyle.Plain,
             target: nil,
             action: nil

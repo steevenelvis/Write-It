@@ -35,12 +35,17 @@
 		174CDFB11C02E867006C1CC2 /* sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CDFB01C02E867006C1CC2 /* sound.png */; };
 		174CDFB31C02F00D006C1CC2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174CDFB21C02F00D006C1CC2 /* AVFoundation.framework */; };
 		174CDFB51C0309C2006C1CC2 /* a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 174CDFB41C0309C2006C1CC2 /* a.mp3 */; };
+		392F53591C0C981500C9C9F3 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F53581C0C981500C9C9F3 /* AjustesViewController.swift */; };
+		392F535D1C0C98C300C9C9F3 /* ajustes.png in Resources */ = {isa = PBXBuildFile; fileRef = 392F535C1C0C98C300C9C9F3 /* ajustes.png */; };
 		39402A421BED282A008FB270 /* SelecNivelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39402A411BED282A008FB270 /* SelecNivelViewController.swift */; };
 		394A1D0B1C04F4E200FB7916 /* logoTec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 394A1D0A1C04F4E200FB7916 /* logoTec.jpg */; };
 		394A1D0D1C04F97600FB7916 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 394A1D0C1C04F97600FB7916 /* icon.png */; };
 		394FCC841C08C57C001F11C3 /* fondo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 394FCC831C08C57C001F11C3 /* fondo2.jpg */; };
 		394FCC861C08C671001F11C3 /* stylus2.png in Resources */ = {isa = PBXBuildFile; fileRef = 394FCC851C08C671001F11C3 /* stylus2.png */; };
 		394FCC881C08C715001F11C3 /* fondo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 394FCC871C08C715001F11C3 /* fondo3.jpg */; };
+		394FCC8A1C08CD87001F11C3 /* PrincipianteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FCC891C08CD87001F11C3 /* PrincipianteViewController.swift */; };
+		394FCC8C1C08D3D9001F11C3 /* writeit.png in Resources */ = {isa = PBXBuildFile; fileRef = 394FCC8B1C08D3D9001F11C3 /* writeit.png */; };
+		394FCC8E1C08E456001F11C3 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 394FCC8D1C08E456001F11C3 /* save.png */; };
 		39645D0D1C06716B003C8B39 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39645D0C1C06716B003C8B39 /* RandomViewController.swift */; };
 		39645D111C06813E003C8B39 /* goma.png in Resources */ = {isa = PBXBuildFile; fileRef = 39645D101C06813E003C8B39 /* goma.png */; };
 		39C69AF11BCC18DE006BE85A /* fondo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39C69AF01BCC18DE006BE85A /* fondo.jpg */; };
@@ -103,12 +108,17 @@
 		174CDFB01C02E867006C1CC2 /* sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound.png; sourceTree = "<group>"; };
 		174CDFB21C02F00D006C1CC2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		174CDFB41C0309C2006C1CC2 /* a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a.mp3; sourceTree = "<group>"; };
+		392F53581C0C981500C9C9F3 /* AjustesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
+		392F535C1C0C98C300C9C9F3 /* ajustes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ajustes.png; sourceTree = "<group>"; };
 		39402A411BED282A008FB270 /* SelecNivelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelecNivelViewController.swift; sourceTree = "<group>"; };
 		394A1D0A1C04F4E200FB7916 /* logoTec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logoTec.jpg; sourceTree = "<group>"; };
 		394A1D0C1C04F97600FB7916 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		394FCC831C08C57C001F11C3 /* fondo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondo2.jpg; sourceTree = "<group>"; };
 		394FCC851C08C671001F11C3 /* stylus2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stylus2.png; sourceTree = "<group>"; };
 		394FCC871C08C715001F11C3 /* fondo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondo3.jpg; sourceTree = "<group>"; };
+		394FCC891C08CD87001F11C3 /* PrincipianteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipianteViewController.swift; sourceTree = "<group>"; };
+		394FCC8B1C08D3D9001F11C3 /* writeit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = writeit.png; sourceTree = "<group>"; };
+		394FCC8D1C08E456001F11C3 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		39645D0C1C06716B003C8B39 /* RandomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		39645D101C06813E003C8B39 /* goma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goma.png; sourceTree = "<group>"; };
 		39C69AF01BCC18DE006BE85A /* fondo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondo.jpg; sourceTree = "<group>"; };
@@ -216,10 +226,13 @@
 			children = (
 				174CDF7B1C02B926006C1CC2 /* Sonidos */,
 				174CDFB01C02E867006C1CC2 /* sound.png */,
+				394FCC8B1C08D3D9001F11C3 /* writeit.png */,
+				394FCC8D1C08E456001F11C3 /* save.png */,
 				A2446FD81BFFC7B700C9D9E9 /* check.png */,
 				39645D101C06813E003C8B39 /* goma.png */,
 				394FCC871C08C715001F11C3 /* fondo3.jpg */,
 				394FCC851C08C671001F11C3 /* stylus2.png */,
+				392F535C1C0C98C300C9C9F3 /* ajustes.png */,
 				394A1D0A1C04F4E200FB7916 /* logoTec.jpg */,
 				394FCC831C08C57C001F11C3 /* fondo2.jpg */,
 				394A1D0C1C04F97600FB7916 /* icon.png */,
@@ -233,10 +246,12 @@
 				39DD20AF1BD562E2002B3798 /* RenderView.swift */,
 				39402A411BED282A008FB270 /* SelecNivelViewController.swift */,
 				78B4B8741A49DDAF002B004D /* SettingsViewController.swift */,
-				EE43D4741A14A6F200311C06 /* ViewController.swift */,
 				39DD20AD1BD562A8002B3798 /* DBPathRecognizer.swift */,
-				39DD20AB1BD56255002B3798 /* RecognizerViewController.swift */,
 				39645D0C1C06716B003C8B39 /* RandomViewController.swift */,
+				EE43D4741A14A6F200311C06 /* ViewController.swift */,
+				39DD20AB1BD56255002B3798 /* RecognizerViewController.swift */,
+				394FCC891C08CD87001F11C3 /* PrincipianteViewController.swift */,
+				392F53581C0C981500C9C9F3 /* AjustesViewController.swift */,
 				EE43D4761A14A6F200311C06 /* Main.storyboard */,
 				EE43D4791A14A6F200311C06 /* Images.xcassets */,
 				EE43D47B1A14A6F200311C06 /* LaunchScreen.xib */,
@@ -321,6 +336,7 @@
 				TargetAttributes = {
 					EE43D46C1A14A6F200311C06 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = KKHCQ9VZPV;
 					};
 					EE43D4811A14A6F200311C06 = {
 						CreatedOnToolsVersion = 6.1;
@@ -358,13 +374,16 @@
 				174CDFA61C02B973006C1CC2 /* q.mp3 in Resources */,
 				174CDFA21C02B973006C1CC2 /* m.mp3 in Resources */,
 				174CDF991C02B973006C1CC2 /* d.mp3 in Resources */,
+				394FCC8E1C08E456001F11C3 /* save.png in Resources */,
 				174CDF971C02B973006C1CC2 /* b.mp3 in Resources */,
 				174CDFAB1C02B973006C1CC2 /* v.mp3 in Resources */,
 				39645D111C06813E003C8B39 /* goma.png in Resources */,
 				394FCC841C08C57C001F11C3 /* fondo2.jpg in Resources */,
 				174CDFA51C02B973006C1CC2 /* p.mp3 in Resources */,
 				A2446FD91BFFC7B700C9D9E9 /* check.png in Resources */,
+				394FCC8C1C08D3D9001F11C3 /* writeit.png in Resources */,
 				174CDF9B1C02B973006C1CC2 /* f.mp3 in Resources */,
+				392F535D1C0C98C300C9C9F3 /* ajustes.png in Resources */,
 				39C69AF71BCC20BF006BE85A /* stylus.gif in Resources */,
 				394A1D0D1C04F97600FB7916 /* icon.png in Resources */,
 				174CDF9A1C02B973006C1CC2 /* e.mp3 in Resources */,
@@ -411,6 +430,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392F53591C0C981500C9C9F3 /* AjustesViewController.swift in Sources */,
+				394FCC8A1C08CD87001F11C3 /* PrincipianteViewController.swift in Sources */,
 				39DD20AE1BD562A8002B3798 /* DBPathRecognizer.swift in Sources */,
 				39DD20AC1BD56255002B3798 /* RecognizerViewController.swift in Sources */,
 				EE43D4751A14A6F200311C06 /* ViewController.swift in Sources */,
@@ -542,9 +563,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DrawPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adrian.DrawPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -553,9 +578,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DrawPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adrian.DrawPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

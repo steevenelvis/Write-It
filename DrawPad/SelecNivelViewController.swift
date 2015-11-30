@@ -100,15 +100,15 @@ class SelecNivelViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "principiante" {
-            let destinoVC = segue.destinationViewController as! ViewController
+            let destinoVC = segue.destinationViewController as! PrincipianteViewController
             
-            destinoVC.nombreLetra = self.letra
+            destinoVC.letra = self.letra
             
             if mayuscula.selectedSegmentIndex == 0{
-                destinoVC.mayuscula = false
+                destinoVC.mayuscula = true
             }
             else{
-                destinoVC.mayuscula = true
+                destinoVC.mayuscula = false
             }
             
         }
@@ -149,13 +149,14 @@ class SelecNivelViewController: UIViewController {
         abecedario.selectedSegmentIndex = 0
         
         let backButton = UIBarButtonItem(
-            title: "Atras",
+            title: "Atrás",
             style: UIBarButtonItemStyle.Plain,
             target: nil,
             action: nil
         );
         
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton;
+        
         abecedario.selectedSegmentIndex = 0
         abecedario1.selectedSegmentIndex = -1
         abecedario2.selectedSegmentIndex = -1
@@ -167,6 +168,7 @@ class SelecNivelViewController: UIViewController {
         imageView.image = bgImage
         self.view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
+        
     }
     
     override func didReceiveMemoryWarning() {

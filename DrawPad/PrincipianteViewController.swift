@@ -116,62 +116,94 @@ class PrincipianteViewController: UIViewController,MFMailComposeViewControllerDe
         let miny7 = PrincipianteViewController.customFilter(self)(.Minimum, .LastPointY, 0.7)
         
         if self.mayuscula?.boolValue == true{
-            recognizer.addModel(PathModel(directions: [7,1,0], datas:"A"))      //Escribir los modelos predeterminados
+            recognizer.addModel(PathModel(directions: [7,6,2,1,0], datas:"A"))      //Escribir los modelos predeterminados
             recognizer.addModel(PathModel(directions: [6,0,1,2,3,4,0,1,2,3,4], datas:"B"))
             recognizer.addModel(PathModel(directions: [4,3,2,1,0], datas:"C"))
             recognizer.addModel(PathModel(directions: [6,0,1,2,3,4], datas:"D", filter:miny7))
-            recognizer.addModel(PathModel(directions: [4,2,0,0], datas:"E"))
+            recognizer.addModel(PathModel(directions: [4,2,0,5,0], datas:"E"))
             recognizer.addModel(PathModel(directions: [6,0,0], datas:"F"))
             recognizer.addModel(PathModel(directions: [5,4,3,2,1,0,7,6,5,4], datas:"G", filter:miny3))
+            if self.letra == "L" || self.letra == "T"{}
+            else{
             recognizer.addModel(PathModel(directions: [2,2,0], datas:"H"))
-            recognizer.addModel(PathModel(directions: [2,0,0], datas:"I"))
+            }
+            recognizer.addModel(PathModel(directions: [2,0,2], datas:"H"))
+            if self.letra == "L" || self.letra == "T"{}
+            else{
+            recognizer.addModel(PathModel(directions: [2,6,0,2,0], datas:"I"))
+            }
+            recognizer.addModel(PathModel(directions: [2], datas:"I"))
             recognizer.addModel(PathModel(directions: [1,0,7,6,0], datas:"J"))
+            recognizer.addModel(PathModel(directions: [0,2,3,4,5], datas:"J"))
             recognizer.addModel(PathModel(directions: [2,7,1], datas:"K"))
             recognizer.addModel(PathModel(directions: [2,0], datas:"L"))
-            recognizer.addModel(PathModel(directions: [2,1,7,2], datas:"M"))
+            if self.letra == "A"{}
+            else{
+            recognizer.addModel(PathModel(directions: [6,1,7,2], datas:"M"))
+            }
             recognizer.addModel(PathModel(directions: [6,1,6], datas:"N"))
+            if self.letra == "Q"{}
+            else{
             recognizer.addModel(PathModel(directions: [0,1,2,3,4,5,6,7], datas:"O", filter:maxy3))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4,1], datas:"O"))
+            }
+            
             recognizer.addModel(PathModel(directions: [6,0,1,2,3,4], datas:"P", filter:maxy7))
-            recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4,1], datas:"Q", filter: maxy3))
+            
+            if self.letra == "O"{}
+            else{
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4,1], datas:"Q"))
+            }
+            if self.letra == "A"{}
+            else{
             recognizer.addModel(PathModel(directions: [6,0,1,2,3,4,1], datas:"R"))
+            }
             recognizer.addModel(PathModel(directions: [5,4,3,2,1,0,1,2,3,4,5], datas:"S"))
+            recognizer.addModel(PathModel(directions: [2,6,0], datas:"T"))
             recognizer.addModel(PathModel(directions: [0,2], datas:"T"))
             recognizer.addModel(PathModel(directions: [2,1,0,7,6], datas:"U"))
-            recognizer.addModel(PathModel(directions: [1,7], datas:"V"))
+            recognizer.addModel(PathModel(directions: [1,2,7,6], datas:"V"))
             recognizer.addModel(PathModel(directions: [1,7,1,7], datas:"W"))
+            recognizer.addModel(PathModel(directions: [1,2,6,1,2,6], datas:"W"))
             recognizer.addModel(PathModel(directions: [1,7], datas:"X"))
+            recognizer.addModel(PathModel(directions: [1,3], datas:"X"))
+            if self.letra == "X"{}
+            else{
             recognizer.addModel(PathModel(directions: [1,2,7], datas:"Y"))
+            recognizer.addModel(PathModel(directions: [1,0,3], datas:"Y"))
+            }
             recognizer.addModel(PathModel(directions: [0,3,0], datas:"Z"))
         }
         
         else{
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"a"))      //Escribir los modelos predeterminados
-        recognizer.addModel(PathModel(directions: [0,1,2,3,4,2], datas:"b"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"b"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0], datas:"c"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"d", filter:miny7))
-        recognizer.addModel(PathModel(directions: [0,5,4,3,2,1,0], datas:"e"))
-        recognizer.addModel(PathModel(directions: [6,0,1,0], datas:"f"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2,3,4], datas:"g", filter:miny3))
-        recognizer.addModel(PathModel(directions: [2,7,0,1,2], datas:"h"))
-        recognizer.addModel(PathModel(directions: [2,2], datas:"i"))
-        recognizer.addModel(PathModel(directions: [2,2,3], datas:"j"))
-        recognizer.addModel(PathModel(directions: [2,7,1], datas:"k"))
-        recognizer.addModel(PathModel(directions: [2], datas:"l"))
-        recognizer.addModel(PathModel(directions: [2,7,0,1,2,7,0,1,2], datas:"m"))
-        recognizer.addModel(PathModel(directions: [2,7,0,1,2], datas:"n"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4], datas:"o", filter:maxy3))
-        recognizer.addModel(PathModel(directions: [1,0,7,6,5,4,3,2], datas:"p", filter:maxy7))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"q", filter: maxy3))
-        recognizer.addModel(PathModel(directions: [2,7,0], datas:"r"))
-        recognizer.addModel(PathModel(directions: [4,3,2,1,0,1,2,3,4], datas:"s"))
-        recognizer.addModel(PathModel(directions: [2,0], datas:"t"))
-        recognizer.addModel(PathModel(directions: [2,4,0,7,2], datas:"u"))
-        recognizer.addModel(PathModel(directions: [1,7], datas:"v"))
-        recognizer.addModel(PathModel(directions: [1,7,1,7], datas:"w"))
-        recognizer.addModel(PathModel(directions: [1,3], datas:"x"))
-        recognizer.addModel(PathModel(directions: [1,3], datas:"y"))
-        recognizer.addModel(PathModel(directions: [0,3,0], datas:"z"))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"a"))      //Escribir los modelos predeterminados
+            recognizer.addModel(PathModel(directions: [0,1,2,3,4,2], datas:"b"))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"b"))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0], datas:"c"))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"d", filter:miny7))
+            recognizer.addModel(PathModel(directions: [0,5,4,3,2,1,0], datas:"e"))
+            recognizer.addModel(PathModel(directions: [6,0,1,0], datas:"f"))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,2,3,4], datas:"g", filter:miny3))
+            recognizer.addModel(PathModel(directions: [2,7,0,1,2], datas:"h"))
+            recognizer.addModel(PathModel(directions: [2,2], datas:"i"))
+            recognizer.addModel(PathModel(directions: [2,2,3], datas:"j"))
+            recognizer.addModel(PathModel(directions: [2,7,1], datas:"k"))
+            recognizer.addModel(PathModel(directions: [2], datas:"l"))
+            recognizer.addModel(PathModel(directions: [2,7,0,1,2,7,0,1,2], datas:"m"))
+            recognizer.addModel(PathModel(directions: [2,7,0,1,2], datas:"n"))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,7,6,5,4], datas:"o", filter:maxy3))
+            recognizer.addModel(PathModel(directions: [1,0,7,6,5,4,3,2], datas:"p", filter:maxy7))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,2], datas:"q", filter: maxy3))
+            recognizer.addModel(PathModel(directions: [2,7,0], datas:"r"))
+            recognizer.addModel(PathModel(directions: [4,3,2,1,0,1,2,3,4], datas:"s"))
+            recognizer.addModel(PathModel(directions: [2,0], datas:"t"))
+            recognizer.addModel(PathModel(directions: [2,4,0,7,2], datas:"u"))
+            recognizer.addModel(PathModel(directions: [1,7], datas:"v"))
+            recognizer.addModel(PathModel(directions: [1,7,1,7], datas:"w"))
+            recognizer.addModel(PathModel(directions: [1,2,6,1,2,6], datas:"W"))
+            recognizer.addModel(PathModel(directions: [1,3], datas:"x"))
+            recognizer.addModel(PathModel(directions: [1,3], datas:"y"))
+            recognizer.addModel(PathModel(directions: [0,3,0], datas:"z"))
         }
         
         self.recognizer = recognizer
@@ -315,14 +347,26 @@ class PrincipianteViewController: UIViewController,MFMailComposeViewControllerDe
         //Save it to the camera roll
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
+        
+    }
+    
+    
+    @IBAction func enviarMail(sender: AnyObject) {
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        self.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.presentViewController(mailComposeViewController, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
-        
+
     }
+    
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
@@ -331,7 +375,7 @@ class PrincipianteViewController: UIViewController,MFMailComposeViewControllerDe
         let usuario = NSUserDefaults.standardUserDefaults()
         
         if usuario.valueForKey("Usuario") != nil {
-            mailComposerVC.setSubject("Trabajo de \(usuario.valueForKey("Usuario") as! NSString)")
+            mailComposerVC.setSubject("Usuario: \(usuario.valueForKey("Usuario") as! NSString)")
         }
         else {
             mailComposerVC.setSubject("WriteIt")
